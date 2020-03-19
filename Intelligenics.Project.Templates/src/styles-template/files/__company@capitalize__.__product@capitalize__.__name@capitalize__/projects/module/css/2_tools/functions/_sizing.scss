@@ -1,0 +1,4 @@
+@function remcalc($pixels) 
+{
+  $remcalc: ($pixels / $base-unit )* 1rem;
+}

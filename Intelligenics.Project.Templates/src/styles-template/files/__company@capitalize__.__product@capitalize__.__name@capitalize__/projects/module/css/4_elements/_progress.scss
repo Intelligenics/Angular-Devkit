@@ -1,0 +1,40 @@
+$progress-bar-background: $grey80;
+$progress-bar-color: $theme-primary;
+
+.progressbar
+{
+    text-decoration: none;
+    width: 100%;
+    position: fixed;
+    background-color: $progress-bar-background;
+    height: 0.2rem;
+
+    &__slider
+    {
+        position: absolute;
+        animation-duration: 2s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        width: 20%;
+        height: 3px;
+        background-color: $progress-bar-color
+        //background-image: linear-gradient( to right, $progress-bar-color, lighten($progress-bar-color,50%), $progress-bar-color );
+    }
+}
+
+
+@keyframes slidein
+{
+    from
+    {
+        left: -5%;
+        width: 10%;
+    }
+
+    to
+    {
+        left: 105%;
+        width: 10%;
+    }
+}

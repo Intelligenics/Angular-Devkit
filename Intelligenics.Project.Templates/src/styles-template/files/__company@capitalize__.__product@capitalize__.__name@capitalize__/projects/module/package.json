@@ -1,0 +1,10 @@
+{
+  "name": "@<%= lowercasecompany %>/<%= lowercaseproduct %>-<%= lowercasename %>",
+  "version": "0.0.1-1",
+  "peerDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@angular/common": "^8.2.12",
+    "@angular/core": "^8.2.12",
+    "bootstrap": "^4.3.1"
+  }
+}

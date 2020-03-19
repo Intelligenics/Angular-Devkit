@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "The source glob"
+          },
+          "dest": {
+            "type": "string",
+            "description": "The destination directory"
+          }
+        }
+      }
+    }
+  }
+}

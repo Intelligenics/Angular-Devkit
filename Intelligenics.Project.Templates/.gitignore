@@ -1,0 +1,8 @@
+# Outputs
+
+src/**/*.js.map
+src/**/*.d.ts
+
+
+# Misc
+node_modules/  

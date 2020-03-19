@@ -1,0 +1,72 @@
+.int-<%= lowercaseproduct %>-<%= lowercasename %>
+{
+    &__primary
+    {
+        background-color: $theme-primary;
+    }
+
+    &__secondary
+    {
+        background-color: $theme-secondary;
+    }
+
+    &__tertiary
+    {
+        background-color: $theme-tertiary;
+    }
+
+    &__grey10
+    {
+        background-color: $grey10;
+    }
+
+    &__black
+    {
+        background-color: $black;
+    }
+
+    &__grey20
+    {
+        background-color: $grey20;
+    }
+
+    &__grey30
+    {
+        background-color: $grey30;
+    }
+
+    &__grey40
+    {
+        background-color: $grey40;
+    }
+
+    &__grey50
+    {
+        background-color: $grey50;
+    }
+
+    &__grey60
+    {
+        background-color: $grey60;
+    }
+
+    &__grey70
+    {
+        background-color: $grey70;
+    }
+
+    &__grey80
+    {
+        background-color: $grey80;
+    }
+
+    &__grey90
+    {
+        background-color: $grey90;
+    }
+
+    &__white
+    {
+        background-color: $white;
+    }
+}

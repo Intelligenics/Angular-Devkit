@@ -1,0 +1,42 @@
+{
+    "name": "@intelligenics/cli",
+    "description": "This package provides cli commands for the intelligenics modular processes",
+    "version": "1.0.12",
+    "bin": {
+        "igx": "./cli.js"
+    },
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc --build",
+        "clean": "tsc --build --clean",
+        "prepublish-projects": "cd .. && node cli npm run pre-publish",
+        "publish": "npm run build && npm publish --access public",
+        "package-projects": "cd .. && node cli generate package",
+        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.12.tgz -g",
+        "generate-solution": "npm run build && igx g solution",
+        "generate-module": "npm run build && igx g module --company=Microlise --product=Jcb --module=Dataview"
+    },
+    "keywords": [
+        "angular",
+        "application framework",
+        "modular framework",
+        "modular process",
+        "typescript"
+    ],
+    "author": {
+        "name": "Intelligenics Ltd."
+    },
+    "dependencies": {
+        "copyfiles": "^2.1.1",
+        "cpx": "^1.5.0"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/node": "^13.1.4",
+        "codelyzer": "^5.2.1",
+        "glob": "^7.1.6",
+        "tslint-eslint-rules": "^5.4.0",
+        "typescript": "^3.2.2",
+        "tslint": "^6.0.0"
+    }
+}

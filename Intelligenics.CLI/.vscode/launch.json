@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\cli.js",
+            "preLaunchTask": "npm: build", 
+            // "args": [
+            //     "builder",
+            //     "-b",
+            //     "feature/analytics",
+            //     "develop",
+            //     "npm install",
+            // ],
+            // "args": [
+            //         "build"
+            //     ],
+            "cwd": "D:/Dev/Asset-Management-Web/Intelligenics.Ignius.Web",
+            "args": [
+                "builder",
+                "-c",
+                "9b2ca252954d0548eadd4ada63d99ae88eba388f",
+                "7dbec75051b41e5caf41761d54bb6dc747c01ff4",
+                "generate package",
+            ],
+            // "args": [
+            //     "builder"
+            // ],  
+
+
+            // "cwd": "D:/Dev/test",
+            // "args": [
+            //     "g",
+            //     "solution",
+            //     "--company=company",
+            //     "--product=product",
+            //     "--module=Dataview"
+            // ],
+
+
+            // "cwd": "D:/Dev/test/Company.Product.Web",
+            // "args": [
+            //     "g",
+            //     "module",
+            //     "--company=company",
+            //     "--product=Product",
+            //     "--module=Dataview",
+            //     ],
+
+            // "cwd": "D:/Dev/test/Company.Product.Web",
+            // "args": [
+            //     "g",
+            //     "portal",
+            //     "--company=company",
+            //     "--product=Product"
+            //     ],
+
+                
+            // "cwd": "D:/Dev/test/Company.Product.Web",
+            // "args": [
+            //     "g",
+            //     "styles", 
+            //     "--company=company",
+            //     "--product=Product"
+            //     ],
+
+            // "args": [
+            //     "--help"
+            // ],
+            // "args": [
+            //     "update"
+            // ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ]
+}
