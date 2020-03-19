@@ -1,0 +1,14 @@
+FROM mycontainerpath/myproduct:latest
+WORKDIR /usr/app/site
+
+COPY /dist .
+EXPOSE 4200
+LABEL maintainer="@<%= lowercasecompany %>"
+LABEL Description="The main portal for the <%= lowercaseproduct %>"
+
+RUN npm i
+
+WORKDIR /usr/app/
+COPY settings.json .
+
+CMD [ "node", "server.js" ]

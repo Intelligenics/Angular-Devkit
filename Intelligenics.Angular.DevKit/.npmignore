@@ -1,0 +1,11 @@
+# Outputs
+src/**/*.d.ts
+
+# IDEs
+.idea/
+jsconfig.json
+.vscode/
+
+node_modules/
+npm-debug.log*
+**/*.tgz

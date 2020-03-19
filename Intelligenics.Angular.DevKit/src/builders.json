@@ -1,0 +1,14 @@
+{
+    "builders": {
+      "deploy-assets": {
+        "implementation": "./deploy-assets/index.js",
+        "schema": "./deploy-assets/schema.json",
+        "description": "Deploys all module assets ready for authoring"
+      }, 
+      "deploy-portal-assets": {
+        "implementation": "./deploy-portal-assets/index.js",
+        "schema": "./deploy-portal-assets/schema.json",
+        "description": "Deploys all portal assets "
+      }
+    }
+  }

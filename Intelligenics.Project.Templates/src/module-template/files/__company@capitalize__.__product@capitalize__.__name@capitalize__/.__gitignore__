@@ -1,0 +1,14 @@
+/*
+!package.json
+!package-lock.json
+!README.md
+!.gitignore
+!*.njsproj
+!/projects
+!/projects/module
+/projects/module/*
+!/projects/module/src
+!/projects/module/assets
+!/projects/module/e2e
+/projects/module/e2e/*
+!/projects/module/e2e/src

@@ -1,0 +1,123 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>NodejsConsoleApp1</Name>
+    <RootNamespace>NodejsConsoleApp1</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6753cb6c-f1da-4a6f-bf4f-68e1e5fa43cb</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="projects\module\css\1_settings\_colours.scss" />
+    <Content Include="projects\module\css\1_settings\_fonts.scss" />
+    <Content Include="projects\module\css\1_settings\_global.scss" />
+    <Content Include="projects\module\css\1_settings\_main.scss" />
+    <Content Include="projects\module\css\2_tools\functions\_sizing.scss" />
+    <Content Include="projects\module\css\2_tools\mixins\_shadow.scss" />
+    <Content Include="projects\module\css\2_tools\_main.scss" />
+    <Content Include="projects\module\css\3_generic\_main.scss" />
+    <Content Include="projects\module\css\3_generic\_normalize.scss" />
+    <Content Include="projects\module\css\4_elements\_anchor.scss" />
+    <Content Include="projects\module\css\4_elements\_body.scss" />
+    <Content Include="projects\module\css\4_elements\_button.scss" />
+    <Content Include="projects\module\css\4_elements\_html.scss" />
+    <Content Include="projects\module\css\4_elements\_main.scss" />
+    <Content Include="projects\module\css\4_elements\_progress.scss" />
+    <Content Include="projects\module\css\4_elements\_typography.scss" />
+    <Content Include="projects\module\css\5_objects\_main.scss" />
+    <Content Include="projects\module\css\5_objects\_skins.scss" />
+    <Content Include="projects\module\css\6_components\_main.scss" />
+    <Content Include="projects\module\css\7_trumps\_backgrounds.scss" />
+    <Content Include="projects\module\css\7_trumps\_buttons.scss" />
+    <Content Include="projects\module\css\7_trumps\_main.scss" />
+    <Content Include="projects\module\css\main.scss" />
+    <Content Include="projects\module\css\trumps.scss" />
+    <Content Include="projects\module\src\lib\components\styles.component.html" />
+    <Content Include="projects\module\src\lib\components\styles.component.scss" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="projects\" />
+    <Folder Include="projects\module\" />
+    <Folder Include="projects\module\css\" />
+    <Folder Include="projects\module\css\1_settings\" />
+    <Folder Include="projects\module\css\2_tools\" />
+    <Folder Include="projects\module\css\2_tools\functions\" />
+    <Folder Include="projects\module\css\2_tools\mixins\" />
+    <Folder Include="projects\module\css\3_generic\" />
+    <Folder Include="projects\module\css\4_elements\" />
+    <Folder Include="projects\module\css\5_objects\" />
+    <Folder Include="projects\module\css\6_components\" />
+    <Folder Include="projects\module\css\7_trumps\" />
+    <Folder Include="projects\module\src\" />
+    <Folder Include="projects\module\src\lib\" />
+    <Folder Include="projects\module\src\lib\components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="projects\module\src\lib\components\styles.component.ts" />
+    <TypeScriptCompile Include="projects\module\src\lib\module.ts" />
+    <TypeScriptCompile Include="projects\module\src\lib\routing.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

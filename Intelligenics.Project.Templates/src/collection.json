@@ -1,0 +1,29 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "module": {
+      "description": "Creates a internal module",
+      "factory": "./module/index"
+    },
+    "module-template": {
+      "description": "Creates a standard feature module, to consume into a portal project.",
+      "factory": "./module-template/index"
+    },
+    "styles-template": {
+      "description": "Creates a standard styles module, to consume into a portal or module project",
+      "factory": "./styles-template/index"
+    },
+    "portal-template": {
+      "description": "Creates a standard portal project",
+      "factory": "./portal-template/index"
+    }, 
+    "module-builder": {
+      "description": "Add the modules builder to allow for module builds",
+      "factory": "./module-builder/index"
+    },
+    "portal-builder": {
+      "description": "Add the portal builder to allow for portal builds",
+      "factory": "./portal-builder/index"
+    }
+  }
+}

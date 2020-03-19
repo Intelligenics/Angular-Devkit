@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "Intelligenics.Angular.DevKit"
+		},
+		{
+			"path": "Intelligenics.Project.Templates"
+		},
+		{
+			"path": "Intelligenics.CLI"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,9 @@
+{
+    "authentication":
+    {
+      "isEnabled": false,
+      "authenticationCookie": "ApplicationCookieName",
+      "authenticationUrl": "http://signin.yoursite.com"
+    }
+  }
+  

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string",
+      "description": "The company name to search assets to deploy for"
+    },
+    "dest": {
+      "type": "string",
+      "description": "The destination for the assets"
+    }
+  }
+}
