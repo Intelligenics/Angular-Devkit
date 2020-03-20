@@ -3,9 +3,9 @@ import { browser, by, element } from 'protractor';
 export class <%= classname %>Page {
   navigateTo() {
     return browser.get(browser.baseUrl) as Promise<any>;
-  }
+  } 
 
-  getTitleText() {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  get<%= classname %>Element() {
+    return element(by.css('.int-<%= lowercaseproduct %>-<%= lowercasename %>')).getTagName() as Promise<string>;
   }
 }

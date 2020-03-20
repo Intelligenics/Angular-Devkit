@@ -13,7 +13,7 @@ describe('When I show the <%= classname %> Page', () =>
     it('I should find the <%= classname %> element', () =>
     {
         page.navigateTo();
-        expect(page.getTitleText()).toEqual('Test Harness');
+        expect(page.get<%= classname %>Element()).toBeTruthy();
     });
 
     afterEach(async () =>

@@ -15,12 +15,12 @@ describe('When using the <%= lowercasename %> service', () =>
     {
         let data = [
             {
-                Id: "id1",
+                Id: 1,
                 Name: "name1",
                 Description: "description1"
             },
             {
-                Id: "id2",
+                Id: 2,
                 Name: "name2",
                 Description: "description2"
             }
@@ -31,7 +31,7 @@ describe('When using the <%= lowercasename %> service', () =>
         mockHttpClient.setup( x => x.get( TypeMoq.It.isValue( APIConstants.itemsControllerUrl ) ) ).returns( () => of( data ) );
         mockHttpClient.setup( x => x.get( TypeMoq.It.isValue( `${APIConstants.itemsControllerUrl}/1` ) ) ).returns( () => of( data[0] ) );
 
-        service = new <%= classname %>Service(mockHttpClient.Mock);
+        service = new <%= classname %>Service(mockHttpClient.object);
     }));
 
    
@@ -49,15 +49,18 @@ describe('When using the <%= lowercasename %> service', () =>
         service.getItems().subscribe((items) =>
         {
             expect(items).toBeTruthy();
-            expect(items.length).toEqual(1);
+            expect(items.length).toEqual(2);
             expect(items[0].id).toEqual(1);
             expect(items[0].name).toEqual("name1");
             expect(items[0].description).toEqual("description1");
+            expect(items[1].id).toEqual(2);
+            expect(items[1].name).toEqual("name2");
+            expect(items[1].description).toEqual("description2");
         })
     });
 
 
-    it('should get an item from the api', () =>
+    it('I should be able to get an item from the api', () =>
     {
         expect(service).toBeTruthy();
 

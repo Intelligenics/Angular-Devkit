@@ -1,19 +1,18 @@
 {
     "name": "@intelligenics/cli",
     "description": "This package provides cli commands for the intelligenics modular processes",
-    "version": "1.0.12",
+    "version": "1.0.26",
     "bin": {
         "igx": "./cli.js"
     },
     "license": "MIT",
-    "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
     "scripts": {
         "build": "tsc --build",
         "clean": "tsc --build --clean",
         "prepublish-projects": "cd .. && node cli npm run pre-publish",
         "publish": "npm run build && npm publish --access public",
         "package-projects": "cd .. && node cli generate package",
-        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.12.tgz -g",
+        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.26.tgz -g",
         "generate-solution": "npm run build && igx g solution",
         "generate-module": "npm run build && igx g module --company=Microlise --product=Jcb --module=Dataview"
     },

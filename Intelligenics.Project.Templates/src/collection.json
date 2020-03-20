@@ -13,6 +13,10 @@
       "description": "Creates a standard styles module, to consume into a portal or module project",
       "factory": "./styles-template/index"
     },
+    "solution-template": {
+      "description": "Add the new solution with vscode workspace",
+      "factory": "./solution-template/index"
+    },
     "portal-template": {
       "description": "Creates a standard portal project",
       "factory": "./portal-template/index"

@@ -72,6 +72,8 @@ schematics @intelligenics/schematics:module-template --name=mymodulename --compa
 To create an internal module template use the following command
 ```
 schematics @intelligenics/schematics:module --name=mymodulename --company=mycompanyname --product=myproductname
+```
+
 
 ## Styles Template
 To create a styles template use the following command
@@ -90,6 +92,19 @@ Once you have done this you can then run your module or application or styles mo
 ``` 
 ng serve
 ```
+
+# Test commands
+To run CI tests for the module both unit tests and e2e tests, use the following commands
+
+
+```
+ng test module --watch=false --progress=false --browsers=ChromeHeadlessCI
+```
+
+```
+ng e2e --protractor-config=projects/module/e2e/protractor-ci.conf.js
+```
+
 
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 

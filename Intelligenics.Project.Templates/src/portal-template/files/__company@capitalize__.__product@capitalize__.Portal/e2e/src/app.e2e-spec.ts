@@ -1,16 +1,16 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('When starting the application', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('I should be able to find the application framework', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to portal!');
+    expect(page.getApplicationFramework()).toBeTruthy();
   });
 
   afterEach(async () => {

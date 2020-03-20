@@ -32,7 +32,7 @@ export class GitProcessor
 
                     if (!commits || 0 == commits.length)
                     {
-                        console.log("no commits found");
+                        throw "No module changes were identified."; 
 
                         return null;
                     }
@@ -47,11 +47,7 @@ export class GitProcessor
         let directories = output.toString().split(/\r?\n/);
 
         if (0 == directories.length)
-        {
-            console.log("no differences identified in commit");
-            throw "no differences identified in commit";
-            return;
-        }
+            throw "No module changes were identified.";
 
         directories
             .filter(directory =>
@@ -92,10 +88,13 @@ export class GitProcessor
                     projects.push(subdirs[index]);
             });
 
-        if (projects.length > 0)
-            
+        if (projects.length > 1)
+            throw "More than one module has been modified in this commit. You must only change one module at a time"
 
-        return projects[0];
+        if (projects.length > 0)
+            return projects[0];
+
+        throw "No module changes were identified.";
     }
 
     // public stageFile(fileName: string)
@@ -140,12 +139,12 @@ export class GitProcessor
     // }
 }
 
-// export enum BranchType
-// {
-//     Feature,
-//     Hotfix,
-//     Release,
-//     Bugfix,
-//     Breaking,
-//     InvalidBranchType,
-// }
+export enum BranchType
+{
+    Feature,
+    Hotfix,
+    Release,
+    Bugfix,
+    Breaking,
+    InvalidBranchType,
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "<%= capitalisecompany %>.<%= capitaliseproduct %>.Portal"
+		},
+		{
+			"path": "<%= capitalisecompany %>.<%= capitaliseproduct %>.<%= capitalisename %>"
+		},
+		{
+			"path": "<%= capitalisecompany %>.<%= capitaliseproduct %>.Styles"
+		}
+	]
+}

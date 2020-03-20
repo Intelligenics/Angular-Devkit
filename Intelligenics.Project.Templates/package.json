@@ -1,45 +1,40 @@
 {
-    "name": "@intelligenics/schematics",
-    "version": "3.0.10",
-    "description": "schematics templates for managing angular applications",
-    "keywords":
-    [
-        "angular",
-        "schematics",
-        "framework",
-        "build",
-        "cli",
-        "devops"
-    ],
-    "scripts":
-    {
-        "build": "tsc -p tsconfig.json",
-        "test": "npm run build && jasmine src/**/*_spec.js",
-        "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.0.10.tgz -g",
-        "publish": "npm run build && npm publish --access public",
-        "styles": "npm run build && schematics .:styles-template --company=intelligenics --product=product --dry-run=false",
-        "pack": "npm run build && npm pack",
-        "module-builder": "cd Company.Product.Module && npm run build && schematics .:module-builder --dry-run=false",
-        "portal-builder": "cd Company.Product.Portal && schematics @intelligenics/schematics:portal-builder --dry-run=false",
-        "module-template": "npm run build && schematics .:module-template --name=module --company=company --product=product --dry-run=false",
-        "portal-template": "npm run build && schematics .:portal-template --company=company --product=product --dry-run=false",
-        "clean-directories": "rmdir /q/s Company.Product.Module"
-    },
-    "author": "Intelligenics Ltd",
-    "license": "MIT",
-    "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
-    "schematics": "./src/collection.json",
-    "dependencies":
-    {
-        "@angular-devkit/core": "^8.3.15",
-        "@angular-devkit/schematics": "^8.3.15",
-        "@types/jasmine": "^3.3.9",
-        "jasmine": "^3.3.1",
-        "typescript": "~3.5.3"
-    },
-    "devDependencies":
-    {
-        "@angular-devkit/schematics-cli": "^0.803.16",
-        "@types/node": "^13.5.3"
-    }
+  "name": "@intelligenics/schematics",
+  "version": "3.1.27",
+  "description": "schematics templates for managing angular applications",
+  "keywords": [
+    "angular",
+    "schematics",
+    "framework",
+    "build",
+    "cli",
+    "devops"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.1.27.tgz -g",
+    "publish": "npm run build && npm publish --access public",
+    "styles": "npm run build && schematics .:styles-template --company=intelligenics --product=product --dry-run=false",
+    "pack": "npm run build && npm pack",
+    "module-builder": "cd Company.Product.Module && npm run build && schematics .:module-builder --dry-run=false",
+    "portal-builder": "cd Company.Product.Portal && schematics @intelligenics/schematics:portal-builder --dry-run=false",
+    "module-template": "npm run build && schematics .:module-template --name=module --company=company --product=product --dry-run=false",
+    "portal-template": "npm run build && schematics .:portal-template --company=company --product=product --dry-run=false",
+    "clean-directories": "rmdir /q/s Company.Product.Module"
+  },
+  "author": "Intelligenics Ltd",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^8.3.15",
+    "@angular-devkit/schematics": "^8.3.15",
+    "@types/jasmine": "^3.3.9",
+    "jasmine": "^3.3.1",
+    "typescript": "~3.5.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/schematics-cli": "^0.803.16",
+    "@types/node": "^13.5.3"
+  }
 }
