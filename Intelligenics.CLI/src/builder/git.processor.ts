@@ -5,9 +5,11 @@ import path = require("path");
 export class GitProcessor
 {
     /**
-     * This method gets all the projects that have been changed
+     * This method gets a project that has changed
+     * This assumes that any pr will only apply changes to one module. An error
+     * will be reported otherwise
      */
-    public getProjects(commitCommand: string, param1: string, param2: string): Array<string>
+    public getProject(commitCommand: string, param1: string, param2: string): string 
     {
 
         let projects = [];
@@ -30,9 +32,9 @@ export class GitProcessor
 
                     if (!commits || 0 == commits.length)
                     {
-                        console.log("no commits found");
+                        throw "No module changes were identified."; 
 
-                        return [];
+                        return null;
                     }
 
                     command = `${commits[0]} ${commits[1]}`;
@@ -45,11 +47,7 @@ export class GitProcessor
         let directories = output.toString().split(/\r?\n/);
 
         if (0 == directories.length)
-        {
-            console.log("no differences identified in commit");
-            return;
-        }
-
+            throw "No module changes were identified.";
 
         directories
             .filter(directory =>
@@ -90,50 +88,55 @@ export class GitProcessor
                     projects.push(subdirs[index]);
             });
 
+        if (projects.length > 1)
+            throw `More than one module has been modified in this commit. You must only change one module at a time. \r\nProjects changed: \r\n\r\n${projects.join(',\r\n')}\r\n`;
 
-        return projects;
+        if (projects.length > 0)
+            return projects[0];
+
+        throw "No module changes were identified.";
     }
 
-    public stageFile(fileName: string)
-    {
-        execSync(`git add ${fileName}`);
-    }
+    // public stageFile(fileName: string)
+    // {
+    //     execSync(`git add ${fileName}`);
+    // }
 
-    public commitChanges(message: string)
-    {
-        execSync(`git commit -m ${message}`);
-    }
+    // public commitChanges(message: string)
+    // {
+    //     execSync(`git commit -m ${message}`);
+    // }
 
-    public getBranchType(): BranchType
-    {
-        let details = execSync(`git log  -1 --format=%B`).toString().toLowerCase();
+    // public getBranchType(): BranchType
+    // {
+    //     let details = execSync(`git log  -1 --format=%B`).toString().toLowerCase();
 
-        if (details.indexOf("feature/") > -1)
-        {
-            return BranchType.Feature;
-        }
-        if (details.indexOf("bugfix/") > -1)
-        {
-            return BranchType.Bugfix;
-        }
+    //     if (details.indexOf("feature/") > -1)
+    //     {
+    //         return BranchType.Feature;
+    //     }
+    //     if (details.indexOf("bugfix/") > -1)
+    //     {
+    //         return BranchType.Bugfix;
+    //     }
 
-        if (details.indexOf("hotfix/") > -1)
-        {
-            return BranchType.Hotfix;
-        }
+    //     if (details.indexOf("hotfix/") > -1)
+    //     {
+    //         return BranchType.Hotfix;
+    //     }
 
-        if (details.indexOf("release/") > -1)
-        {
-            return BranchType.Release;
-        }
+    //     if (details.indexOf("release/") > -1)
+    //     {
+    //         return BranchType.Release;
+    //     }
 
-        if (details.indexOf("breaking/") > -1)
-        {
-            return BranchType.Breaking;
-        }
+    //     if (details.indexOf("breaking/") > -1)
+    //     {
+    //         return BranchType.Breaking;
+    //     }
 
-        return BranchType.InvalidBranchType;
-    }
+    //     return BranchType.InvalidBranchType;
+    // }
 }
 
 export enum BranchType

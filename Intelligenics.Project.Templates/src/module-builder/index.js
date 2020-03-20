@@ -6,10 +6,12 @@ const strings_1 = require("@angular-devkit/core/src/utils/strings");
 const path = require("path");
 const filemanager_1 = require("../common/filemanager");
 const helpers_1 = require("../common/helpers");
+var pjson = require('../../package.json');
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
 function generator(_options) {
     _options.path = process.cwd();
+    console.log("using ", pjson.name, pjson.version);
     return schematics_1.chain([
         (tree, _context) => {
             if (!tree)
@@ -30,13 +32,9 @@ function generator(_options) {
             filemanager_1.FileManager.deleteFiles(".", tree, ["package.json", "README.md", "package-lock.json"]);
             filemanager_1.FileManager.deleteDirectories(".", tree, ["node_modules", "projects"]);
             let localPath = path.join("projects", "test-harness");
-            filemanager_1.FileManager.deleteFiles(localPath, tree);
-            localPath = path.join("projects", "test-harness", "src");
             filemanager_1.FileManager.deleteDirectory(localPath, tree);
-            localPath = path.join("projects", "test-harness", "e2e");
-            filemanager_1.FileManager.deleteFiles(localPath, tree);
             localPath = path.join("projects", "module");
-            filemanager_1.FileManager.deleteFiles(localPath, tree);
+            filemanager_1.FileManager.deleteFiles(localPath, tree, ["package.json"]);
             localPath = path.join("projects", "module", "e2e");
             filemanager_1.FileManager.deleteFiles(localPath, tree);
             return tree;

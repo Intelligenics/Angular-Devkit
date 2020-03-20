@@ -1,7 +1,6 @@
 /*
 !package.json
 !package-lock.json
-!angular.json
 !README.md
 !.gitignore
 !DockerFile

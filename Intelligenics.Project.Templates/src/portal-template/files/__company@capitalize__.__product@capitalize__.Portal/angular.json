@@ -14,13 +14,6 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "deploy": {
-          "builder": "@intelligenics/angular-devkit:deploy-portal-assets",
-          "options": {
-            "company": "@<%= lowercasecompany %>",
-            "dest": "src/assets"
-          }
-        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -32,7 +25,16 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets", 
+              {
+                "glob": "./node_modules/@intelligenics/application-styles/assets/**/*",
+                "input": "./",
+                "output": "./assets"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              },
               {
                 "glob": "./settings.json",
                 "input": "./",
@@ -40,13 +42,12 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/@intelligenics/application-styles/css/main.scss"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/test-harness/src/styles",
-                "node_modules/@intelligenics/application-styles/css"
+                "node_modules/@intelligenics/application-styles/css",
+                "node_modules/bootstrap/scss/bootstrap.scss"
               ]
             },
             "scripts": []
@@ -105,11 +106,31 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "./node_modules/@intelligenics/application-styles/assets/**/*",
+                "input": "./",
+                "output": "./assets"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@intelligenics/application-styles/css",
+                "node_modules/bootstrap/scss/bootstrap.scss"
+              ]
+            },
             "scripts": []
           }
         },

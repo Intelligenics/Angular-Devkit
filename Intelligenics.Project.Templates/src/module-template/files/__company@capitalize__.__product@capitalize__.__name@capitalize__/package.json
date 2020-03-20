@@ -1,6 +1,6 @@
 {
   "name": "@<%= lowercasecompany %>/<%= lowercaseproduct %>-<%= lowercasename %>",
-  "version": "0.0.0-1",
+  "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
     "serve": "ng serve",
@@ -8,18 +8,17 @@
     "test": "ng test module",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-library": "ng build module",
-    "serve-library":"ng build module --watch",
     "pre-publish": "ng build module && ng run module:deploy",
     "pack": "npm run pre-publish && cd dist/module && npm pack"
   },
   "dependencies": {
     "@angular/animations": "~8.2.11",
+    "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.11",
     "@angular/compiler": "~8.2.11",
     "@angular/core": "~8.2.11",
     "@angular/forms": "~8.2.11",
-    "@angular/material": "^8.2.3",
+    "@angular/material": "~8.2.3",
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",

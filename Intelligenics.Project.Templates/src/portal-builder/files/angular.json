@@ -14,24 +14,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "deploy-local": {
-          "builder": "@intelligenics/angular-devkit:deploy-portal-assets",
-          "options": {
-            "company": "<%= lowercasecompany %>",
-            "dest": "src/assets"
-          }
-        },
-        "deploy": {
-          "builder": "@intelligenics/angular-devkit:deploy-portal-assets",
-          "options": {
-            "company": "<%= lowercasecompany %>",
-            "dest": "dist/assets"
-          }
-        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/portal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,7 +25,16 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
+              {
+                "glob": "./node_modules/@intelligenics/application-styles/assets/**/*",
+                "input": "./",
+                "output": "./assets"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              },
               {
                 "glob": "./settings.json",
                 "input": "./",
@@ -47,14 +42,12 @@
               }
             ],
             "styles": [
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/@intelligenics/application-styles/css/main.scss"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/test-harness/src/styles",
-                "node_modules/@intelligenics/application-styles/css"
+                "node_modules/@intelligenics/application-styles/css",
+                "node_modules/bootstrap/scss/bootstrap.scss"
               ]
             },
             "scripts": []
@@ -113,12 +106,31 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "./node_modules/@intelligenics/application-styles/assets/**/*",
+                "input": "./",
+                "output": "./assets"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              },
+              {
+                "glob": "./settings.json",
+                "input": "./",
+                "output": "./"
+              }
             ],
             "styles": [
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@intelligenics/application-styles/css",
+                "node_modules/bootstrap/scss/bootstrap.scss"
+              ]
+            },
             "scripts": []
           }
         },

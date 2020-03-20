@@ -3,7 +3,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 
 import { <%= classname %>Component } from './<%= lowercasename %>.component';
 
-describe( '<%= classname %>Component', () =>
+describe( 'When I using the <%= classname %>Component component', () =>
 {
   let component: <%= classname %>Component;
   let fixture: ComponentFixture<<%= classname %>Component>;
@@ -27,7 +27,7 @@ describe( '<%= classname %>Component', () =>
     fixture.detectChanges();
   } );
 
-  it( 'should create', () =>
+  it( 'I should be able to create it', () =>
   {
     expect( component ).toBeTruthy();
   } );

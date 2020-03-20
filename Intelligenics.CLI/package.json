@@ -1,43 +1,37 @@
 {
     "name": "@intelligenics/cli",
     "description": "This package provides cli commands for the intelligenics modular processes",
-    "version": "1.0.12",
-    "bin":
-    {
+    "version": "1.0.28",
+    "bin": {
         "igx": "./cli.js"
     },
     "license": "MIT",
     "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
-    "scripts":
-    {
+    "scripts": {
         "build": "tsc --build",
         "clean": "tsc --build --clean",
         "prepublish-projects": "cd .. && node cli npm run pre-publish",
         "publish": "npm run build && npm publish --access public",
         "package-projects": "cd .. && node cli generate package",
-        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.12.tgz -g",
+        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.28.tgz -g",
         "generate-solution": "npm run build && igx g solution",
-        "generate-module": "npm run build && igx g module --company=Microlise --product=Jcb --module=Dataview"
+        "generate-module": "npm run build && igx g module --company=MyCompany --product=Jcb --module=Dataview"
     },
-    "keywords":
-    [
+    "keywords": [
         "angular",
         "application framework",
         "modular framework",
         "modular process",
         "typescript"
     ],
-    "author":
-    {
+    "author": {
         "name": "Intelligenics Ltd."
     },
-    "dependencies":
-    {
+    "dependencies": {
         "copyfiles": "^2.1.1",
         "cpx": "^1.5.0"
     },
-    "devDependencies":
-    {
+    "devDependencies": {
         "@types/glob": "^7.1.1",
         "@types/node": "^13.1.4",
         "codelyzer": "^5.2.1",

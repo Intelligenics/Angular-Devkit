@@ -7,9 +7,10 @@ export const  <%= classname %>Routes: Routes =
         {
             path: '',
             component: <%= classname %>Component,
-            resolve:
-            {
-                items: ItemsResolver
-            }
+            // Uncomment this to resolve data for the component
+            // resolve:
+            // {
+            //     items: ItemsResolver
+            // }
         }
     ]; 

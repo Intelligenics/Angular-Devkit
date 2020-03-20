@@ -7,8 +7,11 @@
 !/projects
 !/projects/module
 /projects/module/*
+!/projects/module/package.json
+!/projects/module/css
 !/projects/module/src
 !/projects/module/assets
 !/projects/module/e2e
 /projects/module/e2e/*
 !/projects/module/e2e/src
+/projects/test-harness

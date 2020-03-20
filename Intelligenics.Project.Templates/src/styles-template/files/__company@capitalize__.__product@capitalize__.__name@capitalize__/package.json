@@ -1,11 +1,8 @@
 {
   "name": "@<%= lowercasecompany %>/<%= lowercaseproduct %>-<%= lowercasename %>",
   "version": "0.0.1",
-  "scripts": {
-    "serve": "ng serve",
-    "build": "ng build",
-    "build-library": "npm run build module",
-    "pre-publish": "npm run build module && ng run module:deploy",
+  "scripts": { 
+    "pre-publish": "ng build module && ng run module:deploy",
     "package": "npm run pre-publish && cd dist/module && npm pack"
   },
   "private": true,
@@ -15,6 +12,7 @@
     "@angular/compiler": "~8.2.11",
     "@angular/core": "~8.2.11",
     "@angular/forms": "~8.2.11",
+    "@angular/material": "~8.2.3",
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
