@@ -89,7 +89,7 @@ export class GitProcessor
             });
 
         if (projects.length > 1)
-            throw "More than one module has been modified in this commit. You must only change one module at a time"
+            throw `More than one module has been modified in this commit. You must only change one module at a time. \r\nProjects changed: \r\n\r\n${projects.join(',\r\n')}\r\n`;
 
         if (projects.length > 0)
             return projects[0];

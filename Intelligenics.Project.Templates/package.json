@@ -25,6 +25,7 @@
   },
   "author": "Intelligenics Ltd",
   "license": "MIT",
+  "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
   "schematics": "./src/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^8.3.15",

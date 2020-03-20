@@ -19,8 +19,6 @@ async function doProcess()
     try
     {
 
-        console.log("using ", pjson.name, pjson.version);
-
 
         // Remove path and dir params 
         process.argv.shift();
@@ -58,6 +56,8 @@ async function doProcess()
                 console.log("\r\n");
                 console.log("igx package-copy - Copies all the package dependencies over to the deployed package.json prior to deployment.");
                 console.log("\r\n");
+                console.log("\r\n");                
+                console.log("igx version - outputs this binaries version information"); 
                 console.log("\r\n");
                 console.log("igx check-whitelist -whitelist-file='filepath' - Checks the package.json file contains references only to references defined in the whitelist");
                 console.log("\r\n");
@@ -109,7 +109,11 @@ async function doProcess()
                 const validator = new WhitelistValidator();
                 validator.validate(process.argv[1]);
                 break;
-                
+
+            case "version": 
+                console.log("using ", pjson.name, pjson.version);
+                break;
+
             default:
                 throw "unrecognised command format. Use --help to see available options"
                 break;

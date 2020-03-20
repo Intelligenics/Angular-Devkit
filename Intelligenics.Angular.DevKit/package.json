@@ -19,6 +19,7 @@
   },
   "author": "Intelligenics ltd",
   "license": "MIT",
+  "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
   "dependencies": {
     "@angular-devkit/architect": "^0.803.17",
     "cpx": "^1.5.0",

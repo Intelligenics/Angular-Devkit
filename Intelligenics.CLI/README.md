@@ -92,6 +92,12 @@ igx g portal   --company=companyname --product=productname
 Generates a portal inside a solution folder
 
 
+## Package Version
+This command outputs the current binaries version information
+
+```
+igx version
+```
 # Contributing
 All contributions are welcome, you must commit pull requests to do so. For major changes, please open an issue first to discuss what you would like to change.
 
