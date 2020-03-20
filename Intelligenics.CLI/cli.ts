@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-
-import { Builder } from "./src/builder/builder";
+ 
 import { Generator } from "./src/generator/generator";
 import { Updater } from "./src/updater/updater";
+import { GitProcessor } from "./src/builder/git.processor";
 
 export interface ITask
 {
@@ -41,21 +41,16 @@ try
             console.log("Project building\r\n");
             console.log("=====================================================================\r\n");
             console.log("\r\n");
-            console.log("igx builder - executes the specific command against all projects in the current solution. must be run from the root solution folder");
+            console.log("igx module - calculated the changed module based on the commit information and returns the project path. Errors if more than one module is found");
             console.log("\r\n");
-            console.log("            -b branchname branchname command      - runs the specified command on each project based on branch differences ");
+            console.log("            -b branchname branchname command      - gets the changed module based on branch differences ");
             console.log("\r\n");
-            console.log("      e.g   -b develop feature/test npm install   ");
+            console.log("      e.g   -b develop feature/test ");
             console.log(" ");
             console.log("            -c commitno1 commitno2 command        - runs the specified command on each project based on commit differences ");
             console.log("\r\n");
             console.log("      e.g   -c 934383434399ddfdc 83934738838ddfc8d npm install   ");
             console.log(" ");
-            console.log("           optional commands can be:  ");
-            console.log("               - publish package public - publishes a package to the public npm registry");
-            console.log("               - publish package private - publishes a package to a local container");
-            console.log("               - generate package - automatically increments the package.json revision based on branch names must be used with the ");
-            console.log("                                    -b switch ");
             console.log("\r\n");
             console.log("Project generation\r\n");
             console.log("=====================================================================\r\n"); 
@@ -76,7 +71,7 @@ try
                 Generator.generate(process.argv);
             }
             break;
-        case "builder":
+        case "projects":
 
             let commitCommand = process.argv[1];
             let param1 = process.argv[2];
@@ -92,15 +87,10 @@ try
                 process.argv.shift();
             }
             else
-                process.argv.shift();
+                process.argv.shift(); 
 
-
-            let builder = new Builder();
-            let command = process.argv.join(" ");
-            builder.run(commitCommand, command, param1, param2);
-
-            console.log("command completed successfully");
-            break;
+            let git = new GitProcessor();
+            console.log(git.getProject(commitCommand, param1, param2)); 
 
         default:
             throw "unrecognised command format. Use --help to see available options"
@@ -113,6 +103,8 @@ catch (error)
         console.log(error.stderr.toString());
     else
         console.log(error);
+
+    process.exit(-1);
 }
 
 
