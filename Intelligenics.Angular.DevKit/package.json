@@ -1,33 +1,38 @@
 {
-  "name": "@intelligenics/angular-devkit",
-  "version": "1.0.37",
-  "keywords": [
-    "angular",
-    "schematics",
-    "framework",
-    "build",
-    "cli",
-    "devops"
-  ],
-  "description": "This is the main builder additions to the angular cli used for intelligenics specifics builds",
-  "builders": "./src/builders.json",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "pack": "npm run build && npm pack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm run build && npm publish --access public"
-  },
-  "author": "Intelligenics ltd",
-  "license": "MIT",
-  "dependencies": {
-    "@angular-devkit/architect": "^0.803.17",
-    "cpx": "^1.5.0",
-    "jasmine": "^3.3.1",
-    "typescript": "~3.5.3"
-  },
-  "devDependencies": {
-    "@types/jasmine": "^3.3.9",
-    "@types/node": "^8.0.31",
-    "@types/glob": "^7.1.1"
-  }
+    "name": "@intelligenics/angular-devkit",
+    "version": "1.0.37",
+    "keywords":
+    [
+        "angular",
+        "schematics",
+        "framework",
+        "build",
+        "cli",
+        "devops"
+    ],
+    "description": "This is the main builder additions to the angular cli used for intelligenics specifics builds",
+    "builders": "./src/builders.json",
+    "scripts":
+    {
+        "build": "tsc -p tsconfig.json",
+        "pack": "npm run build && npm pack",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "publish": "npm run build && npm publish --access public"
+    },
+    "author": "Intelligenics ltd",
+    "license": "MIT",
+    "repository": "https://github.com/Intelligenics/Angular-Devkit.git",
+    "dependencies":
+    {
+        "@angular-devkit/architect": "^0.803.17",
+        "cpx": "^1.5.0",
+        "jasmine": "^3.3.1",
+        "typescript": "~3.5.3"
+    },
+    "devDependencies":
+    {
+        "@types/jasmine": "^3.3.9",
+        "@types/node": "^8.0.31",
+        "@types/glob": "^7.1.1"
+    }
 }
