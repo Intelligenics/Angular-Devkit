@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-
-import { GitProcessor } from "./src/builder/git.processor";
+ 
 import { Generator } from "./src/generator/generator";
 import { Updater } from "./src/updater/updater";
-import { PackageGenerator } from "./src/builder/package.generator";
-import { WhitelistValidator } from "./src/builder/whitelist.validator";
+import { WhitelistValidator } from "./src/whitelist/whitelist.validator";
+import { GitProcessor } from "./src/git/git.processor";
 var pjson = require('./package.json');
 
 
@@ -53,10 +52,7 @@ async function doProcess()
                 console.log("\r\n");
                 console.log("      e.g   -c 934383434399ddfdc 83934738838ddfc8d npm install   ");
                 console.log(" ");
-                console.log("\r\n");
-                console.log("igx package-copy - Copies all the package dependencies over to the deployed package.json prior to deployment.");
-                console.log("\r\n");
-                console.log("\r\n");                
+                console.log("\r\n");             
                 console.log("igx version - outputs this binaries version information"); 
                 console.log("\r\n");
                 console.log("igx check-whitelist -whitelist-file='filepath' - Checks the package.json file contains references only to references defined in the whitelist");
@@ -98,12 +94,7 @@ async function doProcess()
 
                 let git = new GitProcessor();
                 console.log(git.getProject(commitCommand, param1, param2));
-                break;
-
-            case "package-copy":
-                const packageGen = new PackageGenerator();
-                packageGen.generate();
-                break;
+                break; 
 
             case "check-whitelist":
                 const validator = new WhitelistValidator();

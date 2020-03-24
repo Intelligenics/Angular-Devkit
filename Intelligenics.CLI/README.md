@@ -45,13 +45,7 @@ Gets the module that has been changed based on the commit information
 ```
 ```            
 e.g   igx get-changed-module -c 934383434399ddfdc 83934738838ddfc8d // returns "mymodulepath"
-``` 
-
-### Package Copy
-This command copies the dependency information from the root package.json into the deployed package.json. Angular's default is to provide a package.json in the library. This requires duplicated effort to maintain two seperate files. This command must be run from the folder container the module at its root. 
-```
-igx package-copy 
-```
+```  
 
 ## Whitelisting
 Whitelisting ensures 3rd party libraries dont leak into the projects without authorisation. By using a whitelist file in your CI/CD pipeline you can make sure only packages authorised by the company are allowed to be used. 

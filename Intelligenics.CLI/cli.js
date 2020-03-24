@@ -10,11 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const git_processor_1 = require("./src/builder/git.processor");
 const generator_1 = require("./src/generator/generator");
 const updater_1 = require("./src/updater/updater");
-const package_generator_1 = require("./src/builder/package.generator");
-const whitelist_validator_1 = require("./src/builder/whitelist.validator");
+const whitelist_validator_1 = require("./src/whitelist/whitelist.validator");
+const git_processor_1 = require("./src/git/git.processor");
 var pjson = require('./package.json');
 function doProcess() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -47,9 +46,6 @@ function doProcess() {
                     console.log("\r\n");
                     console.log("      e.g   -c 934383434399ddfdc 83934738838ddfc8d npm install   ");
                     console.log(" ");
-                    console.log("\r\n");
-                    console.log("igx package-copy - Copies all the package dependencies over to the deployed package.json prior to deployment.");
-                    console.log("\r\n");
                     console.log("\r\n");
                     console.log("igx version - outputs this binaries version information");
                     console.log("\r\n");
@@ -87,10 +83,6 @@ function doProcess() {
                         process.argv.shift();
                     let git = new git_processor_1.GitProcessor();
                     console.log(git.getProject(commitCommand, param1, param2));
-                    break;
-                case "package-copy":
-                    const packageGen = new package_generator_1.PackageGenerator();
-                    packageGen.generate();
                     break;
                 case "check-whitelist":
                     const validator = new whitelist_validator_1.WhitelistValidator();
