@@ -72,12 +72,6 @@ class Updater {
             return item == "package.json";
         }).length > 0;
     }
-    static isSolution() {
-        return fs_1.readdirSync(process.cwd())
-            .filter(item => {
-            return item == "angular.json";
-        }).length > 0;
-    }
 }
 exports.Updater = Updater;
 //# sourceMappingURL=updater.js.map

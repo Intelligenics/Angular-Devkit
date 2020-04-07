@@ -1,7 +1,7 @@
 {
     "name": "@intelligenics/cli",
     "description": "This package provides cli commands for the intelligenics modular processes",
-    "version": "1.0.28",
+    "version": "2.0.1",
     "bin": {
         "igx": "./cli.js"
     },
@@ -13,7 +13,7 @@
         "prepublish-projects": "cd .. && node cli npm run pre-publish",
         "publish": "npm run build && npm publish --access public",
         "package-projects": "cd .. && node cli generate package",
-        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-1.0.28.tgz -g",
+        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-2.0.0.tgz -g",
         "generate-solution": "npm run build && igx g solution",
         "generate-module": "npm run build && igx g module --company=MyCompany --product=Jcb --module=Dataview"
     },

@@ -1,6 +1,4 @@
-import { GitProcessor } from "../builder/git.processor";
 import { spawnSync } from "child_process";
-import { pathToFileURL } from "url";
 import path = require("path");
 import { readdirSync, lstatSync, existsSync } from "fs";
 
@@ -106,12 +104,4 @@ export class Updater
             }).length > 0;
     }
 
-    private static isSolution(): boolean
-    {
-        return readdirSync(process.cwd())
-            .filter(item =>
-            {
-                return item == "angular.json";
-            }).length > 0;
-    }
 }
