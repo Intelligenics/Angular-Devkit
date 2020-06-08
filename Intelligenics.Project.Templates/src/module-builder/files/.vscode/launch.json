@@ -10,10 +10,10 @@
             "request": "launch",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceRoot}",
-            "breakOnLoad": true,
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "*": "${webRoot}/*"
+                "webpack:///../module/src/lib/*": "${webRoot}/projects/module/src/lib/*",
+                "webpack:///./src/*": "${webRoot}/projects/test-harness/src/*",
             }
         },
         {
@@ -30,16 +30,17 @@
                 "/src/*": "${webRoot}/*",
                 "/*": "*",
                 "/./~/*": "${webRoot}/node_modules/*"
-              }
+            }
         },
         {
-          "name": "Debug Angular E2E Tests",
-          "type": "node",
-          "request": "launch",
-          "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
-          "protocol": "inspector",
-          "args": ["${workspaceFolder}/projects/module/e2e/protractor.conf.js"]
+            "name": "Debug Angular E2E Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
+            "args": [
+                "${workspaceFolder}/projects/module/e2e/protractor.conf.js"
+            ]
         }
-        
     ]
 }
