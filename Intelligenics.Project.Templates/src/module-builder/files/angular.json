@@ -48,7 +48,7 @@
               }
             ],
             "styles": [
-              "projects/test-harness/src/styles.scss"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -171,10 +171,6 @@
               {
                 "source": "./projects/module/assets/**/*",
                 "dest": "./dist/module/assets"
-              },
-              {
-                "source": "./projects/module/css/**/*",
-                "dest": "./dist/module/css"
               }
             ]
           }
@@ -184,6 +180,11 @@
           "options": {
             "tsConfig": "projects/module/tsconfig.lib.json",
             "project": "projects/module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/module/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {

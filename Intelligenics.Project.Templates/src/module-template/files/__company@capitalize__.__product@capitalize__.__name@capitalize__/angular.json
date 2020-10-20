@@ -180,6 +180,11 @@
           "options": {
             "tsConfig": "projects/module/tsconfig.lib.json",
             "project": "projects/module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/module/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
