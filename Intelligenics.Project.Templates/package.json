@@ -1,6 +1,6 @@
 {
   "name": "@intelligenics/schematics",
-  "version": "3.1.27",
+  "version": "3.3.2",
   "description": "schematics templates for managing angular applications",
   "keywords": [
     "angular",
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.1.27.tgz -g",
+    "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.3.2.tgz -g",
     "publish": "npm run build && npm publish --access public",
     "styles": "npm run build && schematics .:styles-template --company=intelligenics --product=product --dry-run=false",
     "pack": "npm run build && npm pack",
