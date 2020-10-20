@@ -48,7 +48,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/test-harness/src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -171,6 +171,10 @@
               {
                 "source": "./projects/module/assets/**/*",
                 "dest": "./dist/module/assets"
+              },
+              {
+                "source": "./projects/module/css/**/*",
+                "dest": "./dist/module/css"
               }
             ]
           }
