@@ -71,7 +71,11 @@ The system supports project generation of portal, module and styles module artif
 ```
 igx g solution --company=companyname --product=productname --module=modulename     
 ```
-Generates a solution with styles a portal, and one module
+Generates a solution with styles a portal, and one module 
+```
+igx g standalone-portal --company=companyname --product=productname --module=modulename     
+```
+Generates a standalone portal with embedded modules and styles
 ```
 igx g module   --company=companyname --product=productname --module=modulename     
 ```
