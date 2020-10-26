@@ -13,8 +13,9 @@
         "prepublish-projects": "cd .. && node cli npm run pre-publish",
         "publish": "npm run build && npm publish --access public",
         "package-projects": "cd .. && node cli generate package",
-        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-2.0.0.tgz -g",
+        "publish-local": "npm run build && npm pack && npm i intelligenics-cli-2.0.1.tgz -g",
         "generate-solution": "npm run build && igx g solution",
+        "generate-standalone-portal": "npm run build && igx g standalone-portal --company=MyCompany --product=Jcb --module=Dataview",
         "generate-module": "npm run build && igx g module --company=MyCompany --product=Jcb --module=Dataview"
     },
     "keywords": [

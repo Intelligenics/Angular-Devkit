@@ -1,9 +1,10 @@
 #!/usr/bin/env node
- 
+
 import { Generator } from "./src/generator/generator";
+import { GitProcessor } from "./src/git/git.processor";
 import { Updater } from "./src/updater/updater";
 import { WhitelistValidator } from "./src/whitelist/whitelist.validator";
-import { GitProcessor } from "./src/git/git.processor";
+
 var pjson = require('./package.json');
 
 
@@ -64,6 +65,7 @@ async function doProcess()
                 console.log("igx g module   --company=companyname --product=productname --module=modulename     - generates a feature module inside a solution folder");
                 console.log("igx g styles   --company=companyname --product=productname                         - generates a styles module inside a solution folder");
                 console.log("igx g portal   --company=companyname --product=productname                         - generates a portal inside a solution folder");
+                console.log("igx g standalone-portal   --company=companyname --product=productname              - generates a standalone portal inside a solution folder");
 
                 break;
             case "update":

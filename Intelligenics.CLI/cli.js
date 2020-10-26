@@ -11,9 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const generator_1 = require("./src/generator/generator");
+const git_processor_1 = require("./src/git/git.processor");
 const updater_1 = require("./src/updater/updater");
 const whitelist_validator_1 = require("./src/whitelist/whitelist.validator");
-const git_processor_1 = require("./src/git/git.processor");
 var pjson = require('./package.json');
 function doProcess() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -58,6 +58,7 @@ function doProcess() {
                     console.log("igx g module   --company=companyname --product=productname --module=modulename     - generates a feature module inside a solution folder");
                     console.log("igx g styles   --company=companyname --product=productname                         - generates a styles module inside a solution folder");
                     console.log("igx g portal   --company=companyname --product=productname                         - generates a portal inside a solution folder");
+                    console.log("igx g standalone-portal   --company=companyname --product=productname              - generates a standalone portal inside a solution folder");
                     break;
                 case "update":
                     updater_1.Updater.update();

@@ -1,0 +1,15 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500,700,700i,900,900i&display=swap";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+// PLACE ANY FONTS IMPORTED FROM ICON MOON INTO YOUR ASSETS FOLDER THEN 
+// IMPORT YOUR REFERENCES USING THIS SYNTAX
+// @import "@<%= lowercasecompany %>/<%= lowercaseproduct %>-<%= lowercasename %>/assets/fonts.css";
+
+ 
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: "Arial Black";
+
+
+// Bootstrap overrides
+$font-size-base: $base-font-size;
+$font-family-base: $primary-font;

@@ -28,6 +28,10 @@
     "portal-builder": {
       "description": "Add the portal builder to allow for portal builds",
       "factory": "./portal-builder/index"
+    },
+    "standalone-portal": {
+      "description": "Adds a standalone portal include module and styles all in one package",
+      "factory": "./standalone-portal/index"
     }
   }
 }

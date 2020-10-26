@@ -1,6 +1,6 @@
 {
   "name": "@intelligenics/schematics",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "schematics templates for managing angular applications",
   "keywords": [
     "angular",
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.3.2.tgz -g",
+    "publish-local": "npm run pack && npm i ./intelligenics-schematics-3.3.3.tgz -g",
     "publish": "npm run build && npm publish --access public",
     "styles": "npm run build && schematics .:styles-template --company=intelligenics --product=product --dry-run=false",
     "pack": "npm run build && npm pack",
@@ -21,6 +21,7 @@
     "portal-builder": "cd Company.Product.Portal && schematics @intelligenics/schematics:portal-builder --dry-run=false",
     "module-template": "npm run build && schematics .:module-template --name=module --company=company --product=product --dry-run=false",
     "portal-template": "npm run build && schematics .:portal-template --company=company --product=product --dry-run=false",
+    "standalone-portal": "npm run build && schematics .:standalone-portal --company=company --product=product --dry-run=false",
     "clean-directories": "rmdir /q/s Company.Product.Module"
   },
   "author": "Intelligenics Ltd",

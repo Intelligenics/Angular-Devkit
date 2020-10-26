@@ -1,0 +1,11 @@
+@mixin shadow($horizontallength,$verticallength, $blurradius, $spreadradius, $color )
+{
+    -webkit-box-shadow: $horizontallength $verticallength $blurradius $spreadradius $color;
+    -moz-box-shadow: $horizontallength $verticallength $blurradius $spreadradius $color;
+    box-shadow: $horizontallength $verticallength $blurradius $spreadradius $color;
+}
+
+@mixin default-shadow()
+{
+    box-shadow: ($base-font-size *0.1) ($base-font-size *0.1) ($base-font-size *0.1) ($base-font-size *0.1) $grey70;
+}
