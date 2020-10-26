@@ -1,6 +1,8 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { <%= classname %>Component } from './components/<%= lowercasename %>.component';
-import { ItemsResolver } from './resolvers/items.resolver';
+// import { ItemsResolver } from './resolvers/items.resolver';
 
 export const  <%= classname %>Routes: Routes =
     [
@@ -14,3 +16,16 @@ export const  <%= classname %>Routes: Routes =
             // }
         }
     ]; 
+
+
+@NgModule({
+imports: 
+    [
+        RouterModule.forChild(<%= classname %>Routes)
+    ],
+exports: 
+    [
+        RouterModule
+    ]
+})
+export class <%= classname %>RoutingModule { }

@@ -6,6 +6,7 @@ import { <%= classname %>Component } from './components/<%= lowercasename %>.com
 import { ItemResolver } from './resolvers/item.resolver';
 import { ItemsResolver } from './resolvers/items.resolver';
 import { <%= classname %>Service } from './services/<%= lowercasename %>.service';
+import { <%= classname %>RoutingModule } from './<%= lowercasename %>-routing.module';
 
 
 
@@ -18,6 +19,7 @@ import { <%= classname %>Service } from './services/<%= lowercasename %>.service
         [
             HttpClientModule,
             CommonModule,  
+            <%= classname %>RoutingModule,
             RouterModule,
         ],
     exports:

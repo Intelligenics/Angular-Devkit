@@ -6,7 +6,7 @@ import { <%= classname %>Component } from './components/<%= lowercasename %>.com
 import { ItemResolver } from './resolvers/item.resolver';
 import { ItemsResolver } from './resolvers/items.resolver';
 import { <%= classname %>Service } from './services/<%= lowercasename %>.service';
-import { <%= classname %>Routes } from './<%= lowercasename %>.routing';
+import { <%= classname %>RoutingModule } from './<%= lowercasename %>-routing.module';
 
 
 
@@ -19,7 +19,8 @@ import { <%= classname %>Routes } from './<%= lowercasename %>.routing';
         [
             HttpClientModule,
             CommonModule,  
-            RouterModule.forChild(<%= classname %>Routes)
+            <%= classname %>RoutingModule,
+            RouterModule,
         ],
     exports:
         [

@@ -77,7 +77,11 @@ igx g standalone-portal --company=companyname --product=productname --module=mod
 ```
 Generates a standalone portal with embedded modules and styles
 ```
-igx g module   --company=companyname --product=productname --module=modulename     
+igx g module  --company=companyname --product=productname --module=modulename     
+```
+Generates a feature local module in the current directory.
+```
+igx g module-library  --company=companyname --product=productname --module=modulename     
 ```
 Generates a feature module inside a solution folder.
 ```
